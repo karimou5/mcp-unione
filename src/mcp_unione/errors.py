@@ -21,7 +21,7 @@ class UniOneError(Exception):
 def _table() -> dict:
     try:
         return json.loads(files("mcp_unione.data").joinpath("errors.json").read_text("utf-8"))
-    except Exception:
+    except FileNotFoundError:
         return {}
 
 

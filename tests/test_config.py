@@ -1,5 +1,3 @@
-import importlib
-import pytest
 from mcp_unione.config import Settings
 
 def test_region_eu_default(monkeypatch):
