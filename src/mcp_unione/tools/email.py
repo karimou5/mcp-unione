@@ -111,11 +111,17 @@ def register(mcp, client):
         return await client.post("email/send.json", {"message": message})
 
     @mcp.tool()
-    async def unione_subscribe(
-        from_email: str, to_email: str, from_name: str | None = None
-    ) -> dict:
-        """Send a double opt-in subscription confirmation. POST email/subscribe.json."""
-        payload = {"from_email": from_email, "to_email": to_email}
-        if from_name:
-            payload["from_name"] = from_name
-        return await client.post("email/subscribe.json", payload)
+    async def unione_subscribe(from_email: str, from_name: str, to_email: str) -> dict:
+        """Send a double opt-in subscription confirmation via email/subscribe.json.
+
+        Emails a confirmation request from `from_name <from_email>` to `to_email`,
+        asking the recipient to confirm (opt in to) their subscription. When they click
+        the confirmation link, UniOne records the consent and clears any prior
+        unsubscribe for that address — the inverse of the unsubscribe footer.
+        All three fields are required by UniOne; `from_email` must be on a verified
+        sending domain. Returns {"status": "success"}.
+        """
+        return await client.post(
+            "email/subscribe.json",
+            {"from_email": from_email, "from_name": from_name, "to_email": to_email},
+        )

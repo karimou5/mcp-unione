@@ -78,9 +78,12 @@ async def test_subscribe(client, base):
     )
     m = _mcp(client)
     await m.call_tool(
-        "unione_subscribe", {"from_email": "s@d.com", "to_email": "u@x.com"}
+        "unione_subscribe",
+        {"from_email": "s@d.com", "from_name": "Acme", "to_email": "u@x.com"},
     )
     assert route.called
+    body_json = json.loads(route.calls.last.request.content)
+    assert body_json == {"from_email": "s@d.com", "from_name": "Acme", "to_email": "u@x.com"}
 
 
 async def test_send_does_not_log_api_key(client, base, caplog):
