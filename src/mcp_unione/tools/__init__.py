@@ -1,4 +1,5 @@
 from . import (  # add domains here as implemented
+    domain,
     email,
     suppression,
     system,
@@ -15,4 +16,5 @@ def register_all(mcp, client) -> None:
     template.register(mcp, client)
     webhook.register(mcp, client)
     suppression.register(mcp, client)
+    domain.register(mcp, client)
     # more domains added per task
