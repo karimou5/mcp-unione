@@ -1,19 +1,23 @@
 def register(mcp, client):
     @mcp.tool()
     async def unione_event_dump_create(
-        start_time: str | None = None,
+        start_time: str,
         end_time: str | None = None,
         limit: int | None = None,
         all_projects: bool = False,
         filter: dict | None = None,
-        delimiter: str = ";",
+        delimiter: str = ",",
         format: str = "csv",
     ) -> dict:
         """Create a CSV event export (event-dump/create.json). filter supports job_id, status,
         delivery_status, email, email_from, domain, campaign_id."""
-        p = {"all_projects": all_projects, "delimiter": delimiter, "format": format}
-        for k, v in {
+        p = {
             "start_time": start_time,
+            "all_projects": all_projects,
+            "delimiter": delimiter,
+            "format": format,
+        }
+        for k, v in {
             "end_time": end_time,
             "limit": limit,
             "filter": filter,

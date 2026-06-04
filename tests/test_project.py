@@ -31,16 +31,16 @@ async def test_project_create_wraps_under_project(client, base):
 
 
 @respx.mock
-async def test_project_create_with_backend_id(client, base):
+async def test_project_create_with_backend_domain_id(client, base):
     route = respx.post(f"{base}/project/create.json").mock(
         return_value=httpx.Response(200, json={"status": "success"})
     )
     await _mcp(client).call_tool(
-        "unione_project_create", {"name": "Proj", "backend_id": 7}
+        "unione_project_create", {"name": "Proj", "backend_domain_id": 7}
     )
     assert route.called
     body = json.loads(route.calls.last.request.content)
-    assert body["project"]["backend_id"] == 7
+    assert body["project"]["backend_domain_id"] == 7
     assert "country" not in body["project"]
 
 

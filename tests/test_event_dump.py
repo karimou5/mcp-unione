@@ -18,10 +18,15 @@ async def test_event_dump_create_defaults(client, base):
     route = respx.post(f"{base}/event-dump/create.json").mock(
         return_value=httpx.Response(200, json={"status": "success"})
     )
-    await _mcp(client).call_tool("unione_event_dump_create", {})
+    await _mcp(client).call_tool(
+        "unione_event_dump_create", {"start_time": "2022-07-20 00:00:00"}
+    )
     assert route.called
     body = json.loads(route.calls.last.request.content)
-    assert body == {"all_projects": False, "delimiter": ";", "format": "csv"}
+    assert body["start_time"] == "2022-07-20 00:00:00"
+    assert body["delimiter"] == ","
+    assert body["format"] == "csv"
+    assert body["all_projects"] is False
 
 
 @respx.mock

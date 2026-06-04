@@ -5,7 +5,7 @@ def register(mcp, client):
         country: str | None = None,
         send_enabled: bool = True,
         custom_unsubscribe_url_enabled: bool = False,
-        backend_id: int | None = None,
+        backend_domain_id: int | None = None,
     ) -> dict:
         """Create a project (project/create.json). Returns project_id + project_api_key."""
         proj = {
@@ -13,10 +13,10 @@ def register(mcp, client):
             "send_enabled": send_enabled,
             "custom_unsubscribe_url_enabled": custom_unsubscribe_url_enabled,
         }
-        if country:
+        if country is not None:
             proj["country"] = country
-        if backend_id is not None:
-            proj["backend_id"] = backend_id
+        if backend_domain_id is not None:
+            proj["backend_domain_id"] = backend_domain_id
         return await client.post("project/create.json", {"project": proj})
 
     @mcp.tool()

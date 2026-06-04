@@ -23,7 +23,7 @@ def register(mcp, client):
     ) -> dict:
         """List domains + verification/dkim status (domain/list.json)."""
         p = {"limit": limit, "offset": offset}
-        if domain:
+        if domain is not None:
             p["domain"] = domain
         return await client.post("domain/list.json", p)
 

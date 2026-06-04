@@ -6,7 +6,7 @@ def register(mcp, client):
         """Add to suppression list (suppression/set.json).
         cause: unsubscribed|temporary_unavailable|permanent_unavailable|complained."""
         p = {"email": email, "cause": cause}
-        if created:
+        if created is not None:
             p["created"] = created
         return await client.post("suppression/set.json", p)
 
