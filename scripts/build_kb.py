@@ -21,13 +21,14 @@ from __future__ import annotations
 
 import json
 import re
+from collections.abc import Callable
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RESEARCH = ROOT / "docs" / "superpowers" / "research"
 DATA = ROOT / "src" / "mcp_unione" / "data"
 KB = DATA / "kb"
-SYNCED = "2026-06-04"
+SYNCED = "2026-06-04"  # update when research/*.md are re-synced from upstream
 DOCS_BASE = "https://docs.unione.io/en"
 
 RESEARCH_FILES = {
@@ -142,7 +143,7 @@ def _parse_pipe_map(num: str, start_heading: str, end_heading: str) -> dict[str,
         # Drop trailing table cells (Final?/Notes) — keep the first description cell.
         desc = desc.split(" | ")[0].strip()
         # Skip the table header row (e.g. | `result` | Meaning |).
-        if desc.lower() in {"meaning", "description", "scope"}:
+        if desc.lower() in {"meaning", "scope"} or desc.lower().startswith("description"):
             continue
         if key and desc and key not in out:
             out[key] = desc
@@ -198,13 +199,8 @@ def parse_statuses() -> dict[str, dict]:
         "### `result` — ALL possible validation statuses (verbatim)",
         "### `cause` — ALL possible causes for a validation result (verbatim)",
     )
-    validation.update(
-        _parse_pipe_map(
-            "05",
-            "### `cause` — ALL possible causes for a validation result (verbatim)",
-            "---",
-        )
-    )
+    for k, v in _parse_pipe_map("05", "### `cause` — ALL possible causes for a validation result (verbatim)", "---").items():
+        validation.setdefault(k, v)
 
     # Suppression cause enum (research/05 §3).
     suppression = _parse_pipe_map(
@@ -360,7 +356,7 @@ def _page_sdks_integrations() -> str:
 
 
 # slug -> (Human Title, docslug, builder)
-PAGES: list[tuple[str, str, str, object]] = [
+PAGES: list[tuple[str, str, str, Callable[[], str]]] = [
     ("getting-started", "Getting Started with UniOne", "getting-started", _page_getting_started),
     ("web-api-reference", "Web API Reference", "web-api", _page_web_api_reference),
     ("email-send-params", "email/send Parameters", "web-api-email-send", _page_email_send_params),

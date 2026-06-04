@@ -39,8 +39,7 @@
     "skip_dup_temp_unreachable": "Sending canceled because the target address is temporarily unreachable.",
     "err_lost": "The email was not sent due to inconsistency of its structure, or lost due to an internal error. The user should re-send the letter.",
     "err_internal": "An internal error occurred. The user should re-send the letter.",
-    "err_delivery_failed": "Delivery failed due to unspecified reasons.",
-    "delivery_status": "Description (webhook reference)"
+    "err_delivery_failed": "Delivery failed due to unspecified reasons."
   },
   "blocking_reasons": {
     "unsubscribed": "The addressee unsubscribed (link in body / `List-Unsubscribe` header), or was added via `suppression/set`.",
