@@ -142,7 +142,7 @@ Two guided prompts help the model use the tools correctly:
 ## Development
 
 ```bash
-uv run pytest          # run the test suite (httpx mocked with respx — zero real API calls)
+uv run pytest          # run the test suite (HTTP mocked with respx — zero real API calls)
 uv run ruff check .    # lint
 ```
 
