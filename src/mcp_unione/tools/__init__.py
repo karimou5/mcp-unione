@@ -1,4 +1,10 @@
-from . import email, system, template, validation  # add domains here as implemented
+from . import (  # add domains here as implemented
+    email,
+    system,
+    template,
+    validation,
+    webhook,
+)
 
 
 def register_all(mcp, client) -> None:
@@ -6,4 +12,5 @@ def register_all(mcp, client) -> None:
     email.register(mcp, client)
     validation.register(mcp, client)
     template.register(mcp, client)
+    webhook.register(mcp, client)
     # more domains added per task
