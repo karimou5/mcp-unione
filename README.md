@@ -154,6 +154,16 @@ the receiving server) means the message reached the inbox provider. If it's not 
 inbox, check **Promotions** and **Spam** before assuming a send failure — use
 `unione_event_dump_create` to read the real per-message delivery status.
 
+## Subscribe / double opt-in
+
+`unione_subscribe(from_email, from_name, to_email)` sends a **subscription confirmation
+request** to `to_email`: the recipient receives an email from `from_name <from_email>`
+asking them to confirm (opt in). When they click the confirmation link, UniOne records the
+consent and clears any prior unsubscribe for that address — the inverse of the unsubscribe
+footer above. All three arguments are required, and `from_email` must be on a verified
+sending domain. Use it to (re)build explicit consent before sending to an address that may
+have unsubscribed.
+
 ## Tools
 
 **32 API tools across 10 domains:**
