@@ -1,6 +1,5 @@
 import pytest
 
-from mcp.server.fastmcp import FastMCP
 from mcp_unione.client import UniOneClient
 from mcp_unione.config import Settings
 
@@ -19,7 +18,3 @@ def client():
 @pytest.fixture
 def base():
     return "https://eu1.unione.io/en/transactional/api/v1"
-
-
-async def call_tool(mcp: FastMCP, name: str, args: dict):
-    return await mcp.call_tool(name, args)

@@ -41,9 +41,14 @@ def register(mcp, client):
         and sends nothing. body OR template_id is required. ≤500 recipients.
         template_engine: simple|velocity|liquid|none. Unsubscribe token:
         {{UnsubscribeUrl}} (simple) / $UnsubscribeUrl (velocity).
+        track_links/track_read default to 1 (UniOne default); pass 0 to disable.
         """
-        if not body and not template_id:
+        if body is None and not template_id:
             return {"error": "Provide either `body` or `template_id`."}
+        if body is not None and not body.model_dump(exclude_none=True):
+            return {"error": "`body` has no content (all fields are None)."}
+        if not recipients:
+            return {"error": "At least one recipient is required."}
         if len(recipients) > 500:
             return {"error": "UniOne allows at most 500 recipients per send."}
         message = {
@@ -76,7 +81,7 @@ def register(mcp, client):
             ),
             "idempotence_key": idempotence_key,
         }
-        message.update({k: v for k, v in opt.items() if v is not None})
+        message.update({k: v for k, v in opt.items() if v is not None and v != [] and v != {}})
         if sandbox:
             message.setdefault("options", {})["sandbox"] = True  # routed to sandbox domain
         to = [r.email for r in recipients]

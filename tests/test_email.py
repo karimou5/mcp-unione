@@ -1,3 +1,5 @@
+import json
+
 import httpx
 import respx
 
@@ -47,10 +49,9 @@ async def test_send_real_with_confirm(client, base):
         },
     )
     assert route.called
-    body = route.calls.last.request.content
-    # httpx serializes JSON compactly (no space after the colon).
-    assert b"a@b.com" in body and b'"from_email":"s@d.com"' in body
-    assert b'"message"' in body
+    body_json = json.loads(route.calls.last.request.content)
+    assert body_json["message"]["from_email"] == "s@d.com"
+    assert body_json["message"]["recipients"][0]["email"] == "a@b.com"
 
 
 @respx.mock
@@ -80,3 +81,26 @@ async def test_subscribe(client, base):
         "unione_subscribe", {"from_email": "s@d.com", "to_email": "u@x.com"}
     )
     assert route.called
+
+
+async def test_send_does_not_log_api_key(client, base, caplog):
+    import logging
+
+    with respx.mock:
+        respx.post(f"{base}/email/send.json").mock(
+            return_value=httpx.Response(200, json={"status": "success"})
+        )
+        m = FastMCP("t")
+        email.register(m, client)
+        with caplog.at_level(logging.INFO, logger="mcp_unione"):
+            await m.call_tool(
+                "unione_send_email",
+                {
+                    "recipients": [{"email": "a@b.com"}],
+                    "subject": "Hi",
+                    "from_email": "s@d.com",
+                    "body": {"html": "<b>hi</b>"},
+                    "confirm_send": True,
+                },
+            )
+    assert "k" not in caplog.text  # the test api_key is "k"
