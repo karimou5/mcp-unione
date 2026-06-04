@@ -1,11 +1,13 @@
 from __future__ import annotations
 
 import json
+from functools import lru_cache
 from importlib.resources import files
 
 from mcp.server.fastmcp.resources import FunctionResource
 
 
+@lru_cache(maxsize=None)
 def _manifest() -> list[dict]:
     return json.loads(files("mcp_unione.data").joinpath("manifest.json").read_text("utf-8"))
 

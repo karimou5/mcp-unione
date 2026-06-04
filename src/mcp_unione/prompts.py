@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def register(mcp, client=None):
     @mcp.prompt()
     def compose_transactional_email(goal: str = "") -> str:

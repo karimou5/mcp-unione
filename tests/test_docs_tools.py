@@ -34,3 +34,12 @@ async def test_fetch_doc_page_live():
     )
     out = await _mcp().call_tool("unione_fetch_doc_page", {"slug_or_url": "email-statuses"})
     assert "Email statuses" in str(out)
+
+
+async def test_search_docs_no_match_returns_empty():
+    import json
+
+    res = await _mcp().call_tool("unione_search_docs", {"query": "zzznonexistentqueryterm999"})
+    text = res[0].text if isinstance(res, list) else (res.content[0].text if hasattr(res, "content") else str(res))
+    data = json.loads(text)
+    assert data["results"] == []

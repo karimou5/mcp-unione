@@ -2,15 +2,18 @@ from __future__ import annotations
 
 import json
 import re
+from functools import lru_cache
 from importlib.resources import files
 
 import httpx
 
 
+@lru_cache(maxsize=None)
 def _data(name: str) -> str:
     return files("mcp_unione.data").joinpath(name).read_text("utf-8")
 
 
+@lru_cache(maxsize=None)
 def _manifest() -> list[dict]:
     return json.loads(_data("manifest.json"))
 
@@ -43,9 +46,12 @@ def register(mcp, client=None):
         )
         hits = []
         for s, e in scored[:limit]:
-            if s == 0 and hits:
+            if s == 0:
                 break
-            body = _kb_text(e["slug"])
+            try:
+                body = _kb_text(e["slug"])
+            except OSError:
+                body = ""
             snippet = next(
                 (ln for ln in body.splitlines() if any(t in ln.lower() for t in terms)),
                 e.get("summary", ""),
@@ -67,7 +73,7 @@ def register(mcp, client=None):
         (e.g. 'email-statuses') or a full https://docs.unione.io/en/... URL."""
         url = (
             slug_or_url
-            if slug_or_url.startswith("http")
+            if slug_or_url.startswith(("https://", "http://"))
             else f"https://docs.unione.io/en/{slug_or_url}"
         )
         async with httpx.AsyncClient(timeout=30, follow_redirects=True) as c:
@@ -92,13 +98,8 @@ def register(mcp, client=None):
     async def unione_lookup_status(status: str) -> dict:
         """Explain an email status or extended delivery_status code."""
         s = json.loads(_data("statuses.json"))
-        for bucket in (
-            "statuses",
-            "delivery_status",
-            "blocking_reasons",
-            "validation",
-            "suppression_cause",
-        ):
-            if status in s.get(bucket, {}):
-                return {"status": status, "category": bucket, "meaning": s[bucket][status]}
+        status_lower = status.strip().lower()
+        for bucket in ("statuses", "delivery_status", "blocking_reasons", "validation", "suppression_cause"):
+            if status_lower in s.get(bucket, {}):
+                return {"status": status, "category": bucket, "meaning": s[bucket][status_lower]}
         return {"status": status, "meaning": "Unknown status."}
