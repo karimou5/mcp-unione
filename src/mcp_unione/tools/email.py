@@ -42,6 +42,17 @@ def register(mcp, client):
         template_engine: simple|velocity|liquid|none. Unsubscribe token:
         {{UnsubscribeUrl}} (simple) / $UnsubscribeUrl (velocity).
         track_links/track_read default to 1 (UniOne default); pass 0 to disable.
+
+        DELIVERABILITY / UNSUBSCRIBE: by default UniOne appends an unsubscribe footer to
+        every message, e.g.:
+            This message to <to> was sent from:
+            <from_name> | <from_email>
+            Unsubscribe
+        Gmail often treats that footer as a marketing signal and files the email under the
+        Promotions tab (or Spam for a young sending domain). For transactional mail, pass
+        skip_unsubscribe=1 to drop the footer and improve inbox placement. Note:
+        skip_unsubscribe must be enabled on your UniOne account first — if setting it has
+        no visible effect (footer still present), contact UniOne support to turn it on.
         """
         if body is None and not template_id:
             return {"error": "Provide either `body` or `template_id`."}
