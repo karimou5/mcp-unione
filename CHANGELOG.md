@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.3.0](https://github.com/karimou5/mcp-unione/compare/v0.2.0...v0.3.0) (2026-06-04)
+
+
+### Features
+
+* document subscribe / double opt-in flow ([435b884](https://github.com/karimou5/mcp-unione/commit/435b884b45f4b5435c20dd5f269833bdc5dcb2ef))
+
+
+### Bug Fixes
+
+* require from_name in unione_subscribe and document double opt-in flow ([70964ec](https://github.com/karimou5/mcp-unione/commit/70964ec7caeeba7c906c28c2887ae7a292750e5d))
+
+
+### Documentation
+
+* add badges, Docker/GHCR usage, and releases section to README ([82756ed](https://github.com/karimou5/mcp-unione/commit/82756ed2f36014bd76b737c4f611725a52206790))
+* document unsubscribe footer + skip_unsubscribe deliverability note ([88e871e](https://github.com/karimou5/mcp-unione/commit/88e871eb6f1782176b485065e2e2d62697f7291e))
+* improve README (badges, Docker usage, releases) ([947b189](https://github.com/karimou5/mcp-unione/commit/947b1891d5c4dd98855be5d64a857b3d3b856df4))
+* unsubscribe footer & skip_unsubscribe deliverability note ([4f54be7](https://github.com/karimou5/mcp-unione/commit/4f54be763dbc5232c64d3f62323a81b785342274))
+
 ## [0.2.0](https://github.com/karimou5/mcp-unione/compare/v0.1.0...v0.2.0) (2026-06-04)
 
 
