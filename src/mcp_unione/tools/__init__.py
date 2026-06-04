@@ -1,4 +1,6 @@
-# register_all is a no-op placeholder for Phase 0.
-# system.py (and other domains) are added in Phase 2 tasks.
+from . import system  # add domains here as implemented
+
+
 def register_all(mcp, client) -> None:
-    pass
+    system.register(mcp, client)
+    # email.register(mcp, client) ... (added per task)
