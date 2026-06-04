@@ -130,6 +130,30 @@ with `confirm_send=true` to deliver.
 It also accepts `sandbox=true`, which routes the message through UniOne's sandbox domain
 for safe end-to-end testing without reaching real inboxes.
 
+## Deliverability & the unsubscribe footer
+
+By default UniOne appends an **unsubscribe footer** to every message, e.g.:
+
+```
+This message to <to> was sent from:
+MCP UniOne | <from_email>
+Unsubscribe
+```
+
+Gmail often reads that footer as a marketing signal and files the email under the
+**Promotions** tab (or **Spam** for a young sending domain) — so a "delivered" email can
+still feel "not received". For transactional mail, pass **`skip_unsubscribe=1`** to
+`unione_send_email` to drop the footer and improve inbox placement.
+
+> **Note:** `skip_unsubscribe` must be enabled on your UniOne account first. If setting it
+> has no visible effect (the footer is still there), **contact UniOne support** to turn it
+> on for your account.
+
+Tip: a "delivered" status (UniOne event `delivered` / `ok_delivered`, with a `250 OK` from
+the receiving server) means the message reached the inbox provider. If it's not in the
+inbox, check **Promotions** and **Spam** before assuming a send failure — use
+`unione_event_dump_create` to read the real per-message delivery status.
+
 ## Tools
 
 **32 API tools across 10 domains:**
