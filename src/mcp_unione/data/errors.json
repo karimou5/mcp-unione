@@ -1,0 +1,1802 @@
+{
+  "101": {
+    "http": 401,
+    "message": "API key not passed or empty.",
+    "fix": "Pass correct `X-API-KEY` header or `api_key` JSON parameter."
+  },
+  "102": {
+    "http": 401,
+    "message": "Invalid key `$apiKey`.",
+    "fix": "Use correct user API key or project API key."
+  },
+  "105": {
+    "http": 403,
+    "message": "API is turned OFF.",
+    "fix": "Turn API on in settings."
+  },
+  "106": {
+    "http": 403,
+    "message": "User is inactive.",
+    "fix": "Contact support."
+  },
+  "111": {
+    "http": 400,
+    "message": "JSON parsing error.",
+    "fix": "Check your JSON request syntax."
+  },
+  "114": {
+    "http": 401,
+    "message": "User not found.",
+    "fix": "Send the request to the host you registered at (us1.unione.io or eu1.unione.io)."
+  },
+  "118": {
+    "http": 400,
+    "message": "No DNS TXT records found.",
+    "fix": "Add DNS verification record from `domain/get-dns-records`."
+  },
+  "120": {
+    "http": 500,
+    "message": "Internal DKIM validation error.",
+    "fix": "Contact support."
+  },
+  "121": {
+    "http": 400,
+    "message": "Timeout searching domain (DNS request timed out).",
+    "fix": "Try later."
+  },
+  "122": {
+    "http": 400,
+    "message": "DKIM record not found.",
+    "fix": "Add DKIM record from `domain/get-dns-records`."
+  },
+  "123": {
+    "http": 400,
+    "message": "DKIM record malformed.",
+    "fix": "Set up DKIM properly."
+  },
+  "124": {
+    "http": 400,
+    "message": "DKIM record does not match expected.",
+    "fix": "Use the key from `domain/get-dns-records`."
+  },
+  "125": {
+    "http": 400,
+    "message": "Several different DKIM keys in DNS entry.",
+    "fix": "Set up DKIM properly."
+  },
+  "126": {
+    "http": 400,
+    "message": "Non-DKIM record types present in DNS record.",
+    "fix": "Add the DKIM record from `domain/get-dns-records`."
+  },
+  "127": {
+    "http": 400,
+    "message": "Main domain DKIM record limit reached (max 10 DKIM records per primary domain).",
+    "fix": "Main domain DKIM record limit reached (max 10 DKIM records per primary domain)."
+  },
+  "129": {
+    "http": 400,
+    "message": "Unknown DKIM validation error.",
+    "fix": "Re-check DKIM record; contact support if persists."
+  },
+  "130": {
+    "http": 400,
+    "message": "Domain not allowed according to Registry policy.",
+    "fix": "Use another domain."
+  },
+  "150": {
+    "http": 500,
+    "message": "An unknown internal error occurred.",
+    "fix": "Try later or contact support."
+  },
+  "199": {
+    "http": 413,
+    "message": "Request too large. Data must be ≤ 10 MB.",
+    "fix": "Request too large. Data must be ≤ 10 MB."
+  },
+  "201": {
+    "http": 400,
+    "message": "Message body is missing.",
+    "fix": "Message body is missing."
+  },
+  "202": {
+    "http": 400,
+    "message": "Sender email is missing.",
+    "fix": "Sender email is missing."
+  },
+  "203": {
+    "http": 400,
+    "message": "Email subject is missing.",
+    "fix": "Email subject is missing."
+  },
+  "204": {
+    "http": 400,
+    "message": "Email recipients passed improperly (must be array; each recipient an object with required `email`). Also returned if **all** addresses fall into `failed_emails`.",
+    "fix": "Email recipients passed improperly (must be array; each recipient an object with required `email`). Also returned if **all** addresses fall into `failed_emails`."
+  },
+  "205": {
+    "http": 400,
+    "message": "Invalid sender email.",
+    "fix": "Invalid sender email."
+  },
+  "206": {
+    "http": 400,
+    "message": "Sender email is not verified.",
+    "fix": "Use an email on a verified domain."
+  },
+  "207": {
+    "http": 400,
+    "message": "MIME file type is incorrect.",
+    "fix": "MIME file type is incorrect."
+  },
+  "208": {
+    "http": 400,
+    "message": "Invalid attachment filename. Forbidden symbol `$symbol`.",
+    "fix": "Invalid attachment filename. Forbidden symbol `$symbol`."
+  },
+  "209": {
+    "http": 400,
+    "message": "Attached file names are duplicated.",
+    "fix": "Attached file names are duplicated."
+  },
+  "210": {
+    "http": 400,
+    "message": "Inline attachment names are duplicated.",
+    "fix": "Inline attachment names are duplicated."
+  },
+  "211": {
+    "http": 400,
+    "message": "Invalid inline attachment filename. Forbidden symbol `$symbol`.",
+    "fix": "Invalid inline attachment filename. Forbidden symbol `$symbol`."
+  },
+  "212": {
+    "http": 400,
+    "message": "Recipients passed improperly (`substitutions` not set / too many / wrong type — string/integer only).",
+    "fix": "Recipients passed improperly (`substitutions` not set / too many / wrong type — string/integer only)."
+  },
+  "213": {
+    "http": 400,
+    "message": "Invalid or non-existent `custom_backend_id`.",
+    "fix": "Invalid or non-existent `custom_backend_id`."
+  },
+  "215": {
+    "http": 403,
+    "message": "User is not allowed to send.",
+    "fix": "Contact support."
+  },
+  "216": {
+    "http": 400,
+    "message": "`metadata` value should be a string or integer.",
+    "fix": "`metadata` value should be a string or integer."
+  },
+  "217": {
+    "http": 400,
+    "message": "Too many metadata fields (max 10).",
+    "fix": "Too many metadata fields (max 10)."
+  },
+  "218": {
+    "http": 400,
+    "message": "Metadata key length should be < 64.",
+    "fix": "Metadata key length should be < 64."
+  },
+  "219": {
+    "http": 400,
+    "message": "Metadata value length should be < 1024.",
+    "fix": "Metadata value length should be < 1024."
+  },
+  "220": {
+    "http": 400,
+    "message": "Metadata key should not be blank.",
+    "fix": "Metadata key should not be blank."
+  },
+  "221": {
+    "http": 400,
+    "message": "`<html>` tag does not exist / invalid in the request.",
+    "fix": "`<html>` tag does not exist / invalid in the request."
+  },
+  "223": {
+    "http": 400,
+    "message": "Attachment `content` body missing or void.",
+    "fix": "Attachment `content` body missing or void."
+  },
+  "224": {
+    "http": 400,
+    "message": "Substitution name must be latin chars/numbers/`_`, starting with a letter.",
+    "fix": "Substitution name must be latin chars/numbers/`_`, starting with a letter."
+  },
+  "227": {
+    "http": 400,
+    "message": "Invalid or non-existent `smtp_pool_id`.",
+    "fix": "Invalid or non-existent `smtp_pool_id`."
+  },
+  "228": {
+    "http": 400,
+    "message": "Passing `smtp_pool_id` requires `custom_backend_id`.",
+    "fix": "Passing `smtp_pool_id` requires `custom_backend_id`."
+  },
+  "229": {
+    "http": 400,
+    "message": "Custom backend domain or tracking domain required for sending.",
+    "fix": "Custom backend domain or tracking domain required for sending."
+  },
+  "230": {
+    "http": 400,
+    "message": "Only default backend or tracking domain required for sending.",
+    "fix": "Only default backend or tracking domain required for sending."
+  },
+  "303": {
+    "http": 400,
+    "message": "Events list contains an unsupported value / event not supported.",
+    "fix": "Events list contains an unsupported value / event not supported."
+  },
+  "304": {
+    "http": 400,
+    "message": "Webhook with specified URL not found.",
+    "fix": "Webhook with specified URL not found."
+  },
+  "305": {
+    "http": 400,
+    "message": "URL not passed.",
+    "fix": "URL not passed."
+  },
+  "601": {
+    "http": 400,
+    "message": "Template not found.",
+    "fix": "Check template id."
+  },
+  "602": {
+    "http": 400,
+    "message": "Template name is missing.",
+    "fix": "Template name is missing."
+  },
+  "603": {
+    "http": 400,
+    "message": "Template name already belongs to another template.",
+    "fix": "Template name already belongs to another template."
+  },
+  "604": {
+    "http": 400,
+    "message": "Max number of templates reached (limit 10000).",
+    "fix": "Max number of templates reached (limit 10000)."
+  },
+  "701": {
+    "http": 400,
+    "message": "Cause not found (invalid blocking reason).",
+    "fix": "Contact support."
+  },
+  "901": {
+    "http": 403,
+    "message": "Sending blocked — daily limit reached (auto-increases; contact support).",
+    "fix": "Sending blocked — daily limit reached (auto-increases; contact support)."
+  },
+  "902": {
+    "http": 403,
+    "message": "Sending limit for free tariff reached.",
+    "fix": "Sending limit for free tariff reached."
+  },
+  "903": {
+    "http": 403,
+    "message": "Free tariff: only send to own domains with confirmed verification or checked emails.",
+    "fix": "Free tariff: only send to own domains with confirmed verification or checked emails."
+  },
+  "904": {
+    "http": 403,
+    "message": "Insufficient funds / card failure.",
+    "fix": "Insufficient funds / card failure."
+  },
+  "905": {
+    "http": 403,
+    "message": "Reached the limit of emails included in subscription plan.",
+    "fix": "Reached the limit of emails included in subscription plan."
+  },
+  "906": {
+    "http": 400,
+    "message": "Exceeded the daily email reset limit.",
+    "fix": "Exceeded the daily email reset limit."
+  },
+  "908": {
+    "http": 500,
+    "message": "Internal error, project owner not found.",
+    "fix": "Internal error, project owner not found."
+  },
+  "1000": {
+    "http": 400,
+    "message": "Missing recipient address.",
+    "fix": "Missing recipient address."
+  },
+  "1001": {
+    "http": 400,
+    "message": "Invalid recipient address value.",
+    "fix": "Invalid recipient address value."
+  },
+  "1002": {
+    "http": 400,
+    "message": "Missing sender address.",
+    "fix": "Missing sender address."
+  },
+  "1003": {
+    "http": 400,
+    "message": "Sender address not verified.",
+    "fix": "Sender address not verified."
+  },
+  "1004": {
+    "http": 400,
+    "message": "Invalid sender address value.",
+    "fix": "Invalid sender address value."
+  },
+  "1005": {
+    "http": 400,
+    "message": "Sender name too long.",
+    "fix": "Sender name too long."
+  },
+  "1006": {
+    "http": 400,
+    "message": "Exceeded daily limit of `email/subscribe`.",
+    "fix": "Exceeded daily limit of `email/subscribe`."
+  },
+  "1100": {
+    "http": 400,
+    "message": "Missing domain name (verification).",
+    "fix": "Missing domain name (verification)."
+  },
+  "1101": {
+    "http": 400,
+    "message": "Invalid domain value.",
+    "fix": "Invalid domain value."
+  },
+  "1102": {
+    "http": 400,
+    "message": "Sending from domain example.ru is prohibited.",
+    "fix": "Use another domain."
+  },
+  "1103": {
+    "http": 400,
+    "message": "Public free domains not allowed.",
+    "fix": "Use your own domain."
+  },
+  "1104": {
+    "http": 400,
+    "message": "Trying to access sandbox domain records.",
+    "fix": "Use another domain."
+  },
+  "1200": {
+    "http": 400,
+    "message": "Missing domain name (validating).",
+    "fix": "Missing domain name (validating)."
+  },
+  "1201": {
+    "http": 400,
+    "message": "Invalid domain value.",
+    "fix": "Invalid domain value."
+  },
+  "1202": {
+    "http": 400,
+    "message": "Domain not registered in UniOne.",
+    "fix": "Call `domain/get-dns-records`."
+  },
+  "1203": {
+    "http": 400,
+    "message": "Trying to access sandbox domain records.",
+    "fix": "Use another domain."
+  },
+  "1301": {
+    "http": 400,
+    "message": "Invalid domain value (verify).",
+    "fix": "Invalid domain value (verify)."
+  },
+  "1302": {
+    "http": 400,
+    "message": "Invalid `limit` value (must be integer 1–100).",
+    "fix": "Invalid `limit` value (must be integer 1–100)."
+  },
+  "1303": {
+    "http": 400,
+    "message": "Invalid `offset` value (≥ 0).",
+    "fix": "Invalid `offset` value (≥ 0)."
+  },
+  "1304": {
+    "http": 400,
+    "message": "Invalid `offset` type (must be int).",
+    "fix": "Invalid `offset` type (must be int)."
+  },
+  "1305": {
+    "http": 400,
+    "message": "Invalid `limit` type (must be int).",
+    "fix": "Invalid `limit` type (must be int)."
+  },
+  "1306": {
+    "http": 400,
+    "message": "Trying to access sandbox domain records.",
+    "fix": "Use another domain."
+  },
+  "1350": {
+    "http": 400,
+    "message": "`domain` field should not be blank.",
+    "fix": "`domain` field should not be blank."
+  },
+  "1351": {
+    "http": 400,
+    "message": "`domain` value is not a valid domain.",
+    "fix": "`domain` value is not a valid domain."
+  },
+  "1352": {
+    "http": 400,
+    "message": "Domain not added to your account.",
+    "fix": "Domain not added to your account."
+  },
+  "1353": {
+    "http": 400,
+    "message": "Unable to delete sandbox domain.",
+    "fix": "Unable to delete sandbox domain."
+  },
+  "1400": {
+    "http": 400,
+    "message": "Missing domain name (validating).",
+    "fix": "Missing domain name (validating)."
+  },
+  "1401": {
+    "http": 400,
+    "message": "Invalid or non-existent domain (A/AAAA/MX must exist; DNS propagation).",
+    "fix": "Invalid or non-existent domain (A/AAAA/MX must exist; DNS propagation)."
+  },
+  "1402": {
+    "http": 400,
+    "message": "Domain not registered.",
+    "fix": "Call `domain/get-dns-records`."
+  },
+  "1403": {
+    "http": 400,
+    "message": "Trying to access sandbox domain records.",
+    "fix": "Use another domain."
+  },
+  "1506": {
+    "http": 400,
+    "message": "`headers` must be object.",
+    "fix": "`headers` must be object."
+  },
+  "1507": {
+    "http": 400,
+    "message": "`headers` must contain ≤ 50 elements.",
+    "fix": "`headers` must contain ≤ 50 elements."
+  },
+  "1508": {
+    "http": 400,
+    "message": "`template_id` — no template with this ID.",
+    "fix": "`template_id` — no template with this ID."
+  },
+  "1510": {
+    "http": 400,
+    "message": "`body.html` must be string.",
+    "fix": "`body.html` must be string."
+  },
+  "1511": {
+    "http": 400,
+    "message": "`body.plaintext` must be string.",
+    "fix": "`body.plaintext` must be string."
+  },
+  "1512": {
+    "http": 400,
+    "message": "`body.amp` must be string.",
+    "fix": "`body.amp` must be string."
+  },
+  "1516": {
+    "http": 400,
+    "message": "`body.html` substitutions contain invalid values.",
+    "fix": "`body.html` substitutions contain invalid values."
+  },
+  "1517": {
+    "http": 400,
+    "message": "`body.plaintext` substitutions contain invalid values.",
+    "fix": "`body.plaintext` substitutions contain invalid values."
+  },
+  "1518": {
+    "http": 400,
+    "message": "`body.amp` substitutions contain invalid values.",
+    "fix": "`body.amp` substitutions contain invalid values."
+  },
+  "1519": {
+    "http": 400,
+    "message": "`reply_to` must be string.",
+    "fix": "`reply_to` must be string."
+  },
+  "1520": {
+    "http": 400,
+    "message": "`reply_to` invalid email.",
+    "fix": "`reply_to` invalid email."
+  },
+  "1521": {
+    "http": 400,
+    "message": "`from_name` must be string.",
+    "fix": "`from_name` must be string."
+  },
+  "1522": {
+    "http": 400,
+    "message": "`subject` must be string.",
+    "fix": "`subject` must be string."
+  },
+  "1523": {
+    "http": 400,
+    "message": "`template_engine` invalid — one of `simple`, `liquid`, `velocity`, `none`.",
+    "fix": "`template_engine` invalid — one of `simple`, `liquid`, `velocity`, `none`."
+  },
+  "1524": {
+    "http": 400,
+    "message": "`recipients` must contain ≤ 500 elements.",
+    "fix": "`recipients` must contain ≤ 500 elements."
+  },
+  "1525": {
+    "http": 400,
+    "message": "`options.send_at` must be ≤ 24 hours in advance.",
+    "fix": "`options.send_at` must be ≤ 24 hours in advance."
+  },
+  "1526": {
+    "http": 400,
+    "message": "`headers[\"X-UNIONE-Template-Engine\"]` invalid — `simple`/`liquid`/`velocity`/`none`.",
+    "fix": "`headers[\"X-UNIONE-Template-Engine\"]` invalid — `simple`/`liquid`/`velocity`/`none`."
+  },
+  "1527": {
+    "http": 400,
+    "message": "`headers[\"X-UNIONE-Global-Language\"]` not allowed — one of be/de/en/es/fr/it/kz/ru/pl/pt/ua.",
+    "fix": "`headers[\"X-UNIONE-Global-Language\"]` not allowed — one of be/de/en/es/fr/it/kz/ru/pl/pt/ua."
+  },
+  "1528": {
+    "http": 400,
+    "message": "`global_language` not allowed — one of be/de/en/es/fr/it/kz/ru/pl/pt/ua.",
+    "fix": "`global_language` not allowed — one of be/de/en/es/fr/it/kz/ru/pl/pt/ua."
+  },
+  "1529": {
+    "http": 400,
+    "message": "`options.send_at` must be in the future.",
+    "fix": "`options.send_at` must be in the future."
+  },
+  "1530": {
+    "http": 400,
+    "message": "`options.send_at` must be a valid datetime string.",
+    "fix": "`options.send_at` must be a valid datetime string."
+  },
+  "1532": {
+    "http": 400,
+    "message": "`tags` should contain ≤ 4 elements.",
+    "fix": "`tags` should contain ≤ 4 elements."
+  },
+  "1533": {
+    "http": 400,
+    "message": "Cannot create more tags (max 10000).",
+    "fix": "Cannot create more tags (max 10000)."
+  },
+  "1534": {
+    "http": 400,
+    "message": "One or more tags too long (max 50 chars).",
+    "fix": "One or more tags too long (max 50 chars)."
+  },
+  "1535": {
+    "http": 400,
+    "message": "One or more tags contains invalid symbols.",
+    "fix": "One or more tags contains invalid symbols."
+  },
+  "1537": {
+    "http": 400,
+    "message": "`bypass_global` should equal 1.",
+    "fix": "`bypass_global` should equal 1."
+  },
+  "1538": {
+    "http": 400,
+    "message": "`bypass_unsubscribed` prohibited without `allow_skip_unsubscribe` flag.",
+    "fix": "`bypass_unsubscribed` prohibited without `allow_skip_unsubscribe` flag."
+  },
+  "1539": {
+    "http": 400,
+    "message": "`bypass_complained` prohibited without `allow_skip_unsubscribe` flag.",
+    "fix": "`bypass_complained` prohibited without `allow_skip_unsubscribe` flag."
+  },
+  "1540": {
+    "http": 400,
+    "message": "`metadata` max size 4000 bytes.",
+    "fix": "`metadata` max size 4000 bytes."
+  },
+  "1541": {
+    "http": 400,
+    "message": "`global_metadata` max size 4000 bytes.",
+    "fix": "`global_metadata` max size 4000 bytes."
+  },
+  "1542": {
+    "http": 400,
+    "message": "`metadata` + `global_metadata` combined max 4000 bytes.",
+    "fix": "`metadata` + `global_metadata` combined max 4000 bytes."
+  },
+  "1543": {
+    "http": 400,
+    "message": "`global_metadata.campaign_id` must be string.",
+    "fix": "`global_metadata.campaign_id` must be string."
+  },
+  "1544": {
+    "http": 400,
+    "message": "`metadata.campaign_id` must be string.",
+    "fix": "`metadata.campaign_id` must be string."
+  },
+  "1545": {
+    "http": 400,
+    "message": "`metadata.campaign_id` not a valid number or uuid.",
+    "fix": "`metadata.campaign_id` not a valid number or uuid."
+  },
+  "1546": {
+    "http": 400,
+    "message": "`subject` substitutions invalid.",
+    "fix": "`subject` substitutions invalid."
+  },
+  "1547": {
+    "http": 400,
+    "message": "`from_name` substitutions invalid.",
+    "fix": "`from_name` substitutions invalid."
+  },
+  "1548": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` must be object.",
+    "fix": "`options.unsubscribe_url` must be object."
+  },
+  "1549": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid substitution format.",
+    "fix": "`options.unsubscribe_url` invalid substitution format."
+  },
+  "1550": {
+    "http": 400,
+    "message": "`options` must be object.",
+    "fix": "`options` must be object."
+  },
+  "1551": {
+    "http": 400,
+    "message": "`metadata`/`global_metadata` value must be a string.",
+    "fix": "`metadata`/`global_metadata` value must be a string."
+  },
+  "1554": {
+    "http": 400,
+    "message": "`headers['Cc']` — number of emails in \"Cc\" must not exceed N.",
+    "fix": "`headers['Cc']` — number of emails in \"Cc\" must not exceed N."
+  },
+  "1555": {
+    "http": 400,
+    "message": "`headers['Cc']` — Cc email must not differ from recipient emails.",
+    "fix": "`headers['Cc']` — Cc email must not differ from recipient emails."
+  },
+  "1556": {
+    "http": 400,
+    "message": "`headers['Cc']` allowed only with non-empty \"To\".",
+    "fix": "`headers['Cc']` allowed only with non-empty \"To\"."
+  },
+  "1557": {
+    "http": 400,
+    "message": "`headers['To']` — number of emails in \"To\" must not exceed N.",
+    "fix": "`headers['To']` — number of emails in \"To\" must not exceed N."
+  },
+  "1558": {
+    "http": 400,
+    "message": "`headers['To']` — To email must not differ from recipient emails.",
+    "fix": "`headers['To']` — To email must not differ from recipient emails."
+  },
+  "1559": {
+    "http": 400,
+    "message": "`recipients` not in \"To\"/\"Cc\" or domain unconfirmed (BCC only on verified domain).",
+    "fix": "`recipients` not in \"To\"/\"Cc\" or domain unconfirmed (BCC only on verified domain)."
+  },
+  "1560": {
+    "http": 400,
+    "message": "`recipients` count must not exceed sum of \"To\" and \"Cc\".",
+    "fix": "`recipients` count must not exceed sum of \"To\" and \"Cc\"."
+  },
+  "1561": {
+    "http": 400,
+    "message": "`headers['Cc']` not a valid Cc.",
+    "fix": "`headers['Cc']` not a valid Cc."
+  },
+  "1562": {
+    "http": 400,
+    "message": "`headers['To']` not a valid To.",
+    "fix": "`headers['To']` not a valid To."
+  },
+  "1565": {
+    "http": 400,
+    "message": "`body.html` invalid velocity substitution format.",
+    "fix": "`body.html` invalid velocity substitution format."
+  },
+  "1566": {
+    "http": 400,
+    "message": "`subject` invalid velocity substitution format.",
+    "fix": "`subject` invalid velocity substitution format."
+  },
+  "1567": {
+    "http": 400,
+    "message": "`from_name` invalid velocity substitution format.",
+    "fix": "`from_name` invalid velocity substitution format."
+  },
+  "1568": {
+    "http": 400,
+    "message": "`reply_to_name` invalid velocity substitution format.",
+    "fix": "`reply_to_name` invalid velocity substitution format."
+  },
+  "1569": {
+    "http": 400,
+    "message": "`body.plaintext` invalid velocity substitution format.",
+    "fix": "`body.plaintext` invalid velocity substitution format."
+  },
+  "1570": {
+    "http": 400,
+    "message": "`body.amp` invalid velocity substitution format.",
+    "fix": "`body.amp` invalid velocity substitution format."
+  },
+  "1571": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid velocity substitution format.",
+    "fix": "`options.unsubscribe_url` invalid velocity substitution format."
+  },
+  "1572": {
+    "http": 400,
+    "message": "`idempotence_key` too long (≤ 64 chars).",
+    "fix": "`idempotence_key` too long (≤ 64 chars)."
+  },
+  "1573": {
+    "http": 400,
+    "message": "Duplicate message with same `idempotence_key`.",
+    "fix": "Duplicate message with same `idempotence_key`."
+  },
+  "1574": {
+    "http": 400,
+    "message": "`from_email` denied — use address from a confirmed domain.",
+    "fix": "`from_email` denied — use address from a confirmed domain."
+  },
+  "1575": {
+    "http": 400,
+    "message": "User not allowed to send.",
+    "fix": "User not allowed to send."
+  },
+  "1576": {
+    "http": 400,
+    "message": "`subject` should not be blank.",
+    "fix": "`subject` should not be blank."
+  },
+  "1577": {
+    "http": 400,
+    "message": "`body` — no message body passed.",
+    "fix": "`body` — no message body passed."
+  },
+  "1578": {
+    "http": 400,
+    "message": "`body.html` — no valid `<html>` tag.",
+    "fix": "`body.html` — no valid `<html>` tag."
+  },
+  "1579": {
+    "http": 400,
+    "message": "`global_substitutions` — max 2 substitutions.",
+    "fix": "`global_substitutions` — max 2 substitutions."
+  },
+  "1580": {
+    "http": 400,
+    "message": "`global_substitutions` name must be latin/numbers/`_`, start with letter.",
+    "fix": "`global_substitutions` name must be latin/numbers/`_`, start with letter."
+  },
+  "1581": {
+    "http": 400,
+    "message": "`globalSubstitutions[...]` value must be string or integer.",
+    "fix": "`globalSubstitutions[...]` value must be string or integer."
+  },
+  "1582": {
+    "http": 400,
+    "message": "`global_metadata` should contain ≤ 10 elements.",
+    "fix": "`global_metadata` should contain ≤ 10 elements."
+  },
+  "1583": {
+    "http": 400,
+    "message": "`global_substitutions` metadata value must be string or integer.",
+    "fix": "`global_substitutions` metadata value must be string or integer."
+  },
+  "1584": {
+    "http": 400,
+    "message": "`global_metadata` key should not be blank.",
+    "fix": "`global_metadata` key should not be blank."
+  },
+  "1585": {
+    "http": 400,
+    "message": "`global_metadata` key length < 64.",
+    "fix": "`global_metadata` key length < 64."
+  },
+  "1586": {
+    "http": 400,
+    "message": "`global_metadata` value ≤ 1024 chars.",
+    "fix": "`global_metadata` value ≤ 1024 chars."
+  },
+  "1587": {
+    "http": 400,
+    "message": "`force_send` — no rights to use.",
+    "fix": "`force_send` — no rights to use."
+  },
+  "1588": {
+    "http": 400,
+    "message": "`skip_unsubscribe` — no right for `skip_unsubscribe = 1`.",
+    "fix": "`skip_unsubscribe` — no right for `skip_unsubscribe = 1`."
+  },
+  "1590": {
+    "http": 400,
+    "message": "`attachments.name` forbidden symbol `/`.",
+    "fix": "`attachments.name` forbidden symbol `/`."
+  },
+  "1591": {
+    "http": 400,
+    "message": "`attachments` duplicated filename.",
+    "fix": "`attachments` duplicated filename."
+  },
+  "1592": {
+    "http": 400,
+    "message": "`attachments.content` missing.",
+    "fix": "`attachments.content` missing."
+  },
+  "1593": {
+    "http": 400,
+    "message": "`attachments.type` MIME skipped/empty.",
+    "fix": "`attachments.type` MIME skipped/empty."
+  },
+  "1594": {
+    "http": 400,
+    "message": "`inline_attachments.name` forbidden symbol `/`.",
+    "fix": "`inline_attachments.name` forbidden symbol `/`."
+  },
+  "1595": {
+    "http": 400,
+    "message": "`inline_attachments` duplicated filename.",
+    "fix": "`inline_attachments` duplicated filename."
+  },
+  "1596": {
+    "http": 400,
+    "message": "`inline_attachments.content` missing.",
+    "fix": "`inline_attachments.content` missing."
+  },
+  "1597": {
+    "http": 400,
+    "message": "`inline_attachments.type` MIME skipped/empty.",
+    "fix": "`inline_attachments.type` MIME skipped/empty."
+  },
+  "1598": {
+    "http": 403,
+    "message": "`from_email` sandbox domain used with unconfirmed email.",
+    "fix": "`from_email` sandbox domain used with unconfirmed email."
+  },
+  "1599": {
+    "http": 403,
+    "message": "`from_email` sandbox domain daily sending limit exceeded.",
+    "fix": "`from_email` sandbox domain daily sending limit exceeded."
+  },
+  "1601": {
+    "http": 400,
+    "message": "`project` section absent.",
+    "fix": "`project` section absent."
+  },
+  "1602": {
+    "http": 400,
+    "message": "`name` should not be blank.",
+    "fix": "`name` should not be blank."
+  },
+  "1603": {
+    "http": 400,
+    "message": "`name` must be string.",
+    "fix": "`name` must be string."
+  },
+  "1604": {
+    "http": 400,
+    "message": "`name` ≤ 255 chars.",
+    "fix": "`name` ≤ 255 chars."
+  },
+  "1605": {
+    "http": 400,
+    "message": "`name` — project with such name already exists.",
+    "fix": "`name` — project with such name already exists."
+  },
+  "1606": {
+    "http": 400,
+    "message": "`send_enabled` must be bool.",
+    "fix": "`send_enabled` must be bool."
+  },
+  "1607": {
+    "http": 400,
+    "message": "`custom_unsubscribe_url_enabled` must be bool.",
+    "fix": "`custom_unsubscribe_url_enabled` must be bool."
+  },
+  "1608": {
+    "http": 400,
+    "message": "Forbidden to use `custom_unsubscribe_url_enabled`.",
+    "fix": "Contact support."
+  },
+  "1609": {
+    "http": 400,
+    "message": "`country` must be string.",
+    "fix": "`country` must be string."
+  },
+  "1610": {
+    "http": 400,
+    "message": "`country` not a valid country (ISO-3166 alpha-2).",
+    "fix": "`country` not a valid country (ISO-3166 alpha-2)."
+  },
+  "1611": {
+    "http": 400,
+    "message": "`backend_domain_id` must be int.",
+    "fix": "`backend_domain_id` must be int."
+  },
+  "1612": {
+    "http": 400,
+    "message": "`backend_domain_id` does not belong to user.",
+    "fix": "`backend_domain_id` does not belong to user."
+  },
+  "1613": {
+    "http": 400,
+    "message": "`backend_domain_id` not active.",
+    "fix": "`backend_domain_id` not active."
+  },
+  "1614": {
+    "http": 400,
+    "message": "`unsubscribe_page_id` must be int.",
+    "fix": "`unsubscribe_page_id` must be int."
+  },
+  "1701": {
+    "http": 400,
+    "message": "`project` section absent.",
+    "fix": "`project` section absent."
+  },
+  "1702": {
+    "http": 400,
+    "message": "`name` should not be blank.",
+    "fix": "`name` should not be blank."
+  },
+  "1703": {
+    "http": 400,
+    "message": "`name` must be string.",
+    "fix": "`name` must be string."
+  },
+  "1704": {
+    "http": 400,
+    "message": "`name` ≤ 255 chars.",
+    "fix": "`name` ≤ 255 chars."
+  },
+  "1705": {
+    "http": 400,
+    "message": "`name` — project with such name already exists.",
+    "fix": "`name` — project with such name already exists."
+  },
+  "1706": {
+    "http": 400,
+    "message": "`project_api_key` — one of [`project_api_key`/`project_id`] required.",
+    "fix": "`project_api_key` — one of [`project_api_key`/`project_id`] required."
+  },
+  "1707": {
+    "http": 400,
+    "message": "`project_api_key` — project not found.",
+    "fix": "`project_api_key` — project not found."
+  },
+  "1708": {
+    "http": 400,
+    "message": "`project_api_key` must be string.",
+    "fix": "`project_api_key` must be string."
+  },
+  "1709": {
+    "http": 400,
+    "message": "`send_enabled` must be bool.",
+    "fix": "`send_enabled` must be bool."
+  },
+  "1710": {
+    "http": 400,
+    "message": "`custom_unsubscribe_url_enabled` must be bool.",
+    "fix": "`custom_unsubscribe_url_enabled` must be bool."
+  },
+  "1711": {
+    "http": 400,
+    "message": "Forbidden to use `custom_unsubscribe_url_enabled`.",
+    "fix": "Contact support."
+  },
+  "1712": {
+    "http": 400,
+    "message": "`project_id` must be string.",
+    "fix": "`project_id` must be string."
+  },
+  "1713": {
+    "http": 400,
+    "message": "One of [`project_api_key`/`project_id`] must be empty.",
+    "fix": "One of [`project_api_key`/`project_id`] must be empty."
+  },
+  "1714": {
+    "http": 400,
+    "message": "`project_id` — project with ID not exists.",
+    "fix": "`project_id` — project with ID not exists."
+  },
+  "1715": {
+    "http": 400,
+    "message": "`project_id` not valid (use the one from `project/create`).",
+    "fix": "`project_id` not valid (use the one from `project/create`)."
+  },
+  "1716": {
+    "http": 400,
+    "message": "`country` must be string.",
+    "fix": "`country` must be string."
+  },
+  "1717": {
+    "http": 400,
+    "message": "`country` not a valid country (ISO-3166 alpha-2).",
+    "fix": "`country` not a valid country (ISO-3166 alpha-2)."
+  },
+  "1718": {
+    "http": 400,
+    "message": "`backend_domain_id` must be int.",
+    "fix": "`backend_domain_id` must be int."
+  },
+  "1719": {
+    "http": 400,
+    "message": "`backend_domain_id` does not belong to user.",
+    "fix": "`backend_domain_id` does not belong to user."
+  },
+  "1720": {
+    "http": 400,
+    "message": "`backend_domain_id` not active.",
+    "fix": "`backend_domain_id` not active."
+  },
+  "1721": {
+    "http": 400,
+    "message": "`email_counter` must be int.",
+    "fix": "`email_counter` must be int."
+  },
+  "1722": {
+    "http": 400,
+    "message": "`email_counter` must equal 0.",
+    "fix": "`email_counter` must equal 0."
+  },
+  "1723": {
+    "http": 400,
+    "message": "`email_counter_limit` must be int.",
+    "fix": "`email_counter_limit` must be int."
+  },
+  "1724": {
+    "http": 400,
+    "message": "`email_counter_limit` ≥ 0.",
+    "fix": "`email_counter_limit` ≥ 0."
+  },
+  "1725": {
+    "http": 400,
+    "message": "`email_counter_mode` must be bool/`default`/`permanent`.",
+    "fix": "`email_counter_mode` must be bool/`default`/`permanent`."
+  },
+  "1726": {
+    "http": 400,
+    "message": "`unsubscribe_page_id` must be int.",
+    "fix": "`unsubscribe_page_id` must be int."
+  },
+  "1801": {
+    "http": 400,
+    "message": "`project_api_key` — one of [`project_api_key`/`project_id`] required.",
+    "fix": "`project_api_key` — one of [`project_api_key`/`project_id`] required."
+  },
+  "1802": {
+    "http": 400,
+    "message": "`project_api_key` — project not found.",
+    "fix": "`project_api_key` — project not found."
+  },
+  "1803": {
+    "http": 400,
+    "message": "`project_api_key` must be string.",
+    "fix": "`project_api_key` must be string."
+  },
+  "1804": {
+    "http": 400,
+    "message": "One of [`project_api_key`/`project_id`] must be empty.",
+    "fix": "One of [`project_api_key`/`project_id`] must be empty."
+  },
+  "1805": {
+    "http": 400,
+    "message": "`project_id` must be string.",
+    "fix": "`project_id` must be string."
+  },
+  "1806": {
+    "http": 400,
+    "message": "`project_id` — project with ID not exists.",
+    "fix": "`project_id` — project with ID not exists."
+  },
+  "1807": {
+    "http": 400,
+    "message": "`project_id` not valid (use the one from `project/create`).",
+    "fix": "`project_id` not valid (use the one from `project/create`)."
+  },
+  "1902": {
+    "http": 400,
+    "message": "`project_api_key` must be string.",
+    "fix": "`project_api_key` must be string."
+  },
+  "1904": {
+    "http": 400,
+    "message": "`project_id` not valid (digits only).",
+    "fix": "`project_id` not valid (digits only)."
+  },
+  "1905": {
+    "http": 400,
+    "message": "`project_id` must be string.",
+    "fix": "`project_id` must be string."
+  },
+  "2306": {
+    "http": 400,
+    "message": "`recipients` should not be blank.",
+    "fix": "`recipients` should not be blank."
+  },
+  "2307": {
+    "http": 400,
+    "message": "`recipients` must be string.",
+    "fix": "`recipients` must be string."
+  },
+  "2500": {
+    "http": 400,
+    "message": "`editor_type` — `html` is required.",
+    "fix": "`editor_type` — `html` is required."
+  },
+  "2501": {
+    "http": 400,
+    "message": "Template was created in visual editor (must be HTML).",
+    "fix": "Template was created in visual editor (must be HTML)."
+  },
+  "2502": {
+    "http": 400,
+    "message": "`editor_type` should not be blank (pass `html`).",
+    "fix": "`editor_type` should not be blank (pass `html`)."
+  },
+  "2503": {
+    "http": 400,
+    "message": "`id` — no template with this ID.",
+    "fix": "`id` — no template with this ID."
+  },
+  "2504": {
+    "http": 400,
+    "message": "`headers` must be object.",
+    "fix": "`headers` must be object."
+  },
+  "2505": {
+    "http": 400,
+    "message": "`headers` ≤ 50 elements.",
+    "fix": "`headers` ≤ 50 elements."
+  },
+  "2514": {
+    "http": 400,
+    "message": "`reply_to` must be string.",
+    "fix": "`reply_to` must be string."
+  },
+  "2515": {
+    "http": 400,
+    "message": "`reply_to` not a valid email.",
+    "fix": "`reply_to` not a valid email."
+  },
+  "2516": {
+    "http": 400,
+    "message": "`template_engine` invalid — `simple`/`liquid`/`velocity`/`none`.",
+    "fix": "`template_engine` invalid — `simple`/`liquid`/`velocity`/`none`."
+  },
+  "2517": {
+    "http": 400,
+    "message": "`subject` must be string.",
+    "fix": "`subject` must be string."
+  },
+  "2518": {
+    "http": 400,
+    "message": "`subject` substitutions invalid.",
+    "fix": "`subject` substitutions invalid."
+  },
+  "2519": {
+    "http": 400,
+    "message": "`from_name` must be string.",
+    "fix": "`from_name` must be string."
+  },
+  "2520": {
+    "http": 400,
+    "message": "`from_name` substitutions invalid.",
+    "fix": "`from_name` substitutions invalid."
+  },
+  "2521": {
+    "http": 400,
+    "message": "`from_name` invalid velocity substitution.",
+    "fix": "`from_name` invalid velocity substitution."
+  },
+  "2522": {
+    "http": 400,
+    "message": "`subject` invalid velocity substitution.",
+    "fix": "`subject` invalid velocity substitution."
+  },
+  "2523": {
+    "http": 400,
+    "message": "`reply_to_name` invalid velocity substitution.",
+    "fix": "`reply_to_name` invalid velocity substitution."
+  },
+  "2524": {
+    "http": 400,
+    "message": "`options` must be string.",
+    "fix": "`options` must be string."
+  },
+  "2525": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid substitution.",
+    "fix": "`options.unsubscribe_url` invalid substitution."
+  },
+  "2526": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid velocity substitution.",
+    "fix": "`options.unsubscribe_url` invalid velocity substitution."
+  },
+  "2527": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` must be object.",
+    "fix": "`options.unsubscribe_url` must be object."
+  },
+  "2528": {
+    "http": 400,
+    "message": "`attachments.name` ≤ 255 bytes.",
+    "fix": "`attachments.name` ≤ 255 bytes."
+  },
+  "2529": {
+    "http": 400,
+    "message": "`inline_attachments.name` ≤ 255 bytes.",
+    "fix": "`inline_attachments.name` ≤ 255 bytes."
+  },
+  "2530": {
+    "http": 400,
+    "message": "`body.html` invalid Liquid substitution format.",
+    "fix": "`body.html` invalid Liquid substitution format."
+  },
+  "2531": {
+    "http": 400,
+    "message": "`subject` invalid Liquid substitution format.",
+    "fix": "`subject` invalid Liquid substitution format."
+  },
+  "2532": {
+    "http": 400,
+    "message": "`from_name` invalid Liquid substitution format.",
+    "fix": "`from_name` invalid Liquid substitution format."
+  },
+  "2533": {
+    "http": 400,
+    "message": "`reply_to_name` invalid Liquid substitution format.",
+    "fix": "`reply_to_name` invalid Liquid substitution format."
+  },
+  "2534": {
+    "http": 400,
+    "message": "`body.plaintext` invalid Liquid substitution format.",
+    "fix": "`body.plaintext` invalid Liquid substitution format."
+  },
+  "2535": {
+    "http": 400,
+    "message": "`body.amp` invalid Liquid substitution format.",
+    "fix": "`body.amp` invalid Liquid substitution format."
+  },
+  "2536": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid Liquid substitution format.",
+    "fix": "`options.unsubscribe_url` invalid Liquid substitution format."
+  },
+  "2600": {
+    "http": 400,
+    "message": "`limit` ≥ 0.",
+    "fix": "`limit` ≥ 0."
+  },
+  "2601": {
+    "http": 400,
+    "message": "`limit` must be int.",
+    "fix": "`limit` must be int."
+  },
+  "2602": {
+    "http": 400,
+    "message": "`offset` ≥ 0.",
+    "fix": "`offset` ≥ 0."
+  },
+  "2603": {
+    "http": 400,
+    "message": "`offset` must be int.",
+    "fix": "`offset` must be int."
+  },
+  "2700": {
+    "http": 400,
+    "message": "`url` must be string.",
+    "fix": "`url` must be string."
+  },
+  "2701": {
+    "http": 400,
+    "message": "`url` should not be blank.",
+    "fix": "`url` should not be blank."
+  },
+  "2702": {
+    "http": 400,
+    "message": "`offset` ≥ 0.",
+    "fix": "`offset` ≥ 0."
+  },
+  "2703": {
+    "http": 400,
+    "message": "`eventFormat` invalid — `json_post` or `json_post_gzip` only.",
+    "fix": "`eventFormat` invalid — `json_post` or `json_post_gzip` only."
+  },
+  "2704": {
+    "http": 400,
+    "message": "`deliveryInfo` value should be 1/0 or true/false.",
+    "fix": "`deliveryInfo` value should be 1/0 or true/false."
+  },
+  "2705": {
+    "http": 400,
+    "message": "`singleEvent` value should be 1/0 or true/false.",
+    "fix": "`singleEvent` value should be 1/0 or true/false."
+  },
+  "2706": {
+    "http": 400,
+    "message": "`maxParallel` must be int.",
+    "fix": "`maxParallel` must be int."
+  },
+  "2707": {
+    "http": 400,
+    "message": "`maxParallel` must be between 5 and 100.",
+    "fix": "`maxParallel` must be between 5 and 100."
+  },
+  "2708": {
+    "http": 400,
+    "message": "`events` must be array.",
+    "fix": "`events` must be array."
+  },
+  "2709": {
+    "http": 400,
+    "message": "`events` should not be blank.",
+    "fix": "`events` should not be blank."
+  },
+  "2710": {
+    "http": 400,
+    "message": "`events` — field `email_status` is required.",
+    "fix": "`events` — field `email_status` is required."
+  },
+  "2711": {
+    "http": 400,
+    "message": "`email_status` value invalid.",
+    "fix": "`email_status` value invalid."
+  },
+  "2712": {
+    "http": 400,
+    "message": "`spam_block` value invalid.",
+    "fix": "`spam_block` value invalid."
+  },
+  "2713": {
+    "http": 400,
+    "message": "`url` — webhook domain name not found.",
+    "fix": "`url` — webhook domain name not found."
+  },
+  "2714": {
+    "http": 400,
+    "message": "`status` invalid — `active` or `disabled`.",
+    "fix": "`status` invalid — `active` or `disabled`."
+  },
+  "2715": {
+    "http": 400,
+    "message": "`status` must be string.",
+    "fix": "`status` must be string."
+  },
+  "2800": {
+    "http": 400,
+    "message": "`name` should not be blank.",
+    "fix": "`name` should not be blank."
+  },
+  "2801": {
+    "http": 400,
+    "message": "`name` must be string.",
+    "fix": "`name` must be string."
+  },
+  "2802": {
+    "http": 400,
+    "message": "`type` must be string.",
+    "fix": "`type` must be string."
+  },
+  "2803": {
+    "http": 400,
+    "message": "`content` must be string.",
+    "fix": "`content` must be string."
+  },
+  "2804": {
+    "http": 400,
+    "message": "`content` ≤ 7 MB (9786710 bytes base64).",
+    "fix": "`content` ≤ 7 MB (9786710 bytes base64)."
+  },
+  "2900": {
+    "http": 400,
+    "message": "`email` should not be blank.",
+    "fix": "`email` should not be blank."
+  },
+  "2901": {
+    "http": 400,
+    "message": "`email` must be string.",
+    "fix": "`email` must be string."
+  },
+  "2902": {
+    "http": 400,
+    "message": "`email` not a valid email.",
+    "fix": "`email` not a valid email."
+  },
+  "2903": {
+    "http": 400,
+    "message": "`all_projects` must be bool.",
+    "fix": "`all_projects` must be bool."
+  },
+  "3000": {
+    "http": 400,
+    "message": "`email` should not be blank.",
+    "fix": "`email` should not be blank."
+  },
+  "3001": {
+    "http": 400,
+    "message": "`email` must be string.",
+    "fix": "`email` must be string."
+  },
+  "3002": {
+    "http": 400,
+    "message": "`email` not a valid email.",
+    "fix": "`email` not a valid email."
+  },
+  "3003": {
+    "http": 400,
+    "message": "`email` doesn't exist (not in suppression list).",
+    "fix": "`email` doesn't exist (not in suppression list)."
+  },
+  "3004": {
+    "http": 400,
+    "message": "`email` cannot be deleted (e.g. severe reason like `blocked`).",
+    "fix": "`email` cannot be deleted (e.g. severe reason like `blocked`)."
+  },
+  "3100": {
+    "http": 400,
+    "message": "`email` should not be blank.",
+    "fix": "`email` should not be blank."
+  },
+  "3101": {
+    "http": 400,
+    "message": "`email` must be string.",
+    "fix": "`email` must be string."
+  },
+  "3102": {
+    "http": 400,
+    "message": "`email` not a valid email.",
+    "fix": "`email` not a valid email."
+  },
+  "3103": {
+    "http": 400,
+    "message": "`cause` should not be blank.",
+    "fix": "`cause` should not be blank."
+  },
+  "3104": {
+    "http": 400,
+    "message": "`cause` must be string.",
+    "fix": "`cause` must be string."
+  },
+  "3105": {
+    "http": 400,
+    "message": "`cause` not allowed (use one of the available values).",
+    "fix": "`cause` not allowed (use one of the available values)."
+  },
+  "3106": {
+    "http": 400,
+    "message": "`created` must be string.",
+    "fix": "`created` must be string."
+  },
+  "3107": {
+    "http": 400,
+    "message": "`created` not a valid datetime.",
+    "fix": "`created` not a valid datetime."
+  },
+  "3200": {
+    "http": 400,
+    "message": "`cause` must be string.",
+    "fix": "`cause` must be string."
+  },
+  "3201": {
+    "http": 400,
+    "message": "`cause` not allowed (use one of the available values).",
+    "fix": "`cause` not allowed (use one of the available values)."
+  },
+  "3202": {
+    "http": 400,
+    "message": "`source` must be string.",
+    "fix": "`source` must be string."
+  },
+  "3203": {
+    "http": 400,
+    "message": "`source` not allowed.",
+    "fix": "`source` not allowed."
+  },
+  "3204": {
+    "http": 400,
+    "message": "`start_time` must be string.",
+    "fix": "`start_time` must be string."
+  },
+  "3205": {
+    "http": 400,
+    "message": "`start_time` not a valid datetime.",
+    "fix": "`start_time` not a valid datetime."
+  },
+  "3206": {
+    "http": 400,
+    "message": "`cursor` must be string.",
+    "fix": "`cursor` must be string."
+  },
+  "3207": {
+    "http": 400,
+    "message": "`cursor` not allowed.",
+    "fix": "`cursor` not allowed."
+  },
+  "3208": {
+    "http": 400,
+    "message": "`limit` must be int.",
+    "fix": "`limit` must be int."
+  },
+  "3209": {
+    "http": 400,
+    "message": "`limit` ≥ 0.",
+    "fix": "`limit` ≥ 0."
+  },
+  "3300": {
+    "http": 400,
+    "message": "`start_time` should not be blank.",
+    "fix": "`start_time` should not be blank."
+  },
+  "3301": {
+    "http": 400,
+    "message": "`start_time` not a valid datetime.",
+    "fix": "`start_time` not a valid datetime."
+  },
+  "3302": {
+    "http": 400,
+    "message": "`end_time` not a valid datetime.",
+    "fix": "`end_time` not a valid datetime."
+  },
+  "3303": {
+    "http": 400,
+    "message": "`limit` should be positive.",
+    "fix": "`limit` should be positive."
+  },
+  "3304": {
+    "http": 400,
+    "message": "`format` invalid — `csv` or `csv_gzip`.",
+    "fix": "`format` invalid — `csv` or `csv_gzip`."
+  },
+  "3305": {
+    "http": 400,
+    "message": "`delimiter` invalid — `;` or `,`.",
+    "fix": "`delimiter` invalid — `;` or `,`."
+  },
+  "3308": {
+    "http": 400,
+    "message": "`all_projects` — user lacks required roles (projects methods disabled by default).",
+    "fix": "`all_projects` — user lacks required roles (projects methods disabled by default)."
+  },
+  "3309": {
+    "http": 400,
+    "message": "Max 10 event dumps at a time.",
+    "fix": "Max 10 event dumps at a time."
+  },
+  "3310": {
+    "http": 400,
+    "message": "`start_time` earlier than allowed `$time`.",
+    "fix": "`start_time` earlier than allowed `$time`."
+  },
+  "3311": {
+    "http": 400,
+    "message": "`limit` must be integer.",
+    "fix": "`limit` must be integer."
+  },
+  "3312": {
+    "http": 400,
+    "message": "`delimiter` must be string.",
+    "fix": "`delimiter` must be string."
+  },
+  "3313": {
+    "http": 400,
+    "message": "`format` must be string.",
+    "fix": "`format` must be string."
+  },
+  "3315": {
+    "http": 400,
+    "message": "`aggregate` must be string.",
+    "fix": "`aggregate` must be string."
+  },
+  "3316": {
+    "http": 400,
+    "message": "Cannot use `filter` with `aggregate`.",
+    "fix": "Cannot use `filter` with `aggregate`."
+  },
+  "3317": {
+    "http": 400,
+    "message": "`dumpFields` must be array.",
+    "fix": "`dumpFields` must be array."
+  },
+  "3318": {
+    "http": 400,
+    "message": "`dumpFields` incorrect fields.",
+    "fix": "`dumpFields` incorrect fields."
+  },
+  "3319": {
+    "http": 400,
+    "message": "`aggregate` invalid — only `day_status` or empty.",
+    "fix": "`aggregate` invalid — only `day_status` or empty."
+  },
+  "3400": {
+    "http": 400,
+    "message": "`filter` must be object.",
+    "fix": "`filter` must be object."
+  },
+  "3401": {
+    "http": 400,
+    "message": "`filter.job_id` must be string.",
+    "fix": "`filter.job_id` must be string."
+  },
+  "3402": {
+    "http": 400,
+    "message": "`filter.status` must be string.",
+    "fix": "`filter.status` must be string."
+  },
+  "3403": {
+    "http": 400,
+    "message": "`filter.status` invalid.",
+    "fix": "`filter.status` invalid."
+  },
+  "3404": {
+    "http": 400,
+    "message": "`filter.email` must be string.",
+    "fix": "`filter.email` must be string."
+  },
+  "3405": {
+    "http": 400,
+    "message": "`filter.email` not a valid email.",
+    "fix": "`filter.email` not a valid email."
+  },
+  "3406": {
+    "http": 400,
+    "message": "`filter.email_from` must be string.",
+    "fix": "`filter.email_from` must be string."
+  },
+  "3407": {
+    "http": 400,
+    "message": "`filter.email_from` not a valid email.",
+    "fix": "`filter.email_from` not a valid email."
+  },
+  "3408": {
+    "http": 400,
+    "message": "`filter.domain` must be string.",
+    "fix": "`filter.domain` must be string."
+  },
+  "3409": {
+    "http": 400,
+    "message": "`filter.domain` not a valid domain.",
+    "fix": "`filter.domain` not a valid domain."
+  },
+  "3410": {
+    "http": 400,
+    "message": "`filter.domain` differs from the domain in the email.",
+    "fix": "`filter.domain` differs from the domain in the email."
+  },
+  "3411": {
+    "http": 400,
+    "message": "`filter.delivery_status` must be string.",
+    "fix": "`filter.delivery_status` must be string."
+  },
+  "3412": {
+    "http": 400,
+    "message": "`filter.delivery_status` invalid.",
+    "fix": "`filter.delivery_status` invalid."
+  },
+  "3413": {
+    "http": 400,
+    "message": "`filter.campaign_id` must be string.",
+    "fix": "`filter.campaign_id` must be string."
+  },
+  "3414": {
+    "http": 400,
+    "message": "`filter.campaign_id` invalid number (≤ 128 bit).",
+    "fix": "`filter.campaign_id` invalid number (≤ 128 bit)."
+  },
+  "3500": {
+    "http": 400,
+    "message": "`dump_id` should not be blank.",
+    "fix": "`dump_id` should not be blank."
+  },
+  "3501": {
+    "http": 400,
+    "message": "`dump_id` not a valid UUID.",
+    "fix": "`dump_id` not a valid UUID."
+  },
+  "3502": {
+    "http": 400,
+    "message": "`dump_id` event dump does not exist.",
+    "fix": "`dump_id` event dump does not exist."
+  },
+  "3600": {
+    "http": 400,
+    "message": "`dump_id` should not be blank.",
+    "fix": "`dump_id` should not be blank."
+  },
+  "3601": {
+    "http": 400,
+    "message": "`dump_id` not a valid UUID.",
+    "fix": "`dump_id` not a valid UUID."
+  },
+  "3602": {
+    "http": 400,
+    "message": "`dump_id` event dump does not exist.",
+    "fix": "`dump_id` event dump does not exist."
+  },
+  "3700": {
+    "http": 400,
+    "message": "`tag_id` should not be blank.",
+    "fix": "`tag_id` should not be blank."
+  },
+  "3701": {
+    "http": 400,
+    "message": "`tag_id` must be int.",
+    "fix": "`tag_id` must be int."
+  },
+  "3800": {
+    "http": 400,
+    "message": "`email` — max concurrent requests is 4.",
+    "fix": "`email` — max concurrent requests is 4."
+  },
+  "3801": {
+    "http": 400,
+    "message": "`email` should not be blank.",
+    "fix": "`email` should not be blank."
+  },
+  "3802": {
+    "http": 400,
+    "message": "`email` must be string.",
+    "fix": "`email` must be string."
+  },
+  "3803": {
+    "http": 400,
+    "message": "Exceeded daily limit of `email-validation/single`.",
+    "fix": "Exceeded daily limit of `email-validation/single`."
+  },
+  "3900": {
+    "http": 400,
+    "message": "`idempotence_key` must be string.",
+    "fix": "`idempotence_key` must be string."
+  },
+  "10001": {
+    "http": 400,
+    "message": "`inline_attachments.name` ≤ 255 bytes.",
+    "fix": "`inline_attachments.name` ≤ 255 bytes."
+  },
+  "10002": {
+    "http": 400,
+    "message": "`attachments.name` ≤ 255 bytes.",
+    "fix": "`attachments.name` ≤ 255 bytes."
+  },
+  "10003": {
+    "http": 400,
+    "message": "`body.html` invalid Liquid substitution format.",
+    "fix": "`body.html` invalid Liquid substitution format."
+  },
+  "10004": {
+    "http": 400,
+    "message": "`subject` invalid Liquid substitution format.",
+    "fix": "`subject` invalid Liquid substitution format."
+  },
+  "10005": {
+    "http": 400,
+    "message": "`from_name` invalid Liquid substitution format.",
+    "fix": "`from_name` invalid Liquid substitution format."
+  },
+  "10006": {
+    "http": 400,
+    "message": "`reply_to_name` invalid Liquid substitution format.",
+    "fix": "`reply_to_name` invalid Liquid substitution format."
+  },
+  "10007": {
+    "http": 400,
+    "message": "`body.plaintext` invalid Liquid substitution format.",
+    "fix": "`body.plaintext` invalid Liquid substitution format."
+  },
+  "10008": {
+    "http": 400,
+    "message": "`body.amp` invalid Liquid substitution format.",
+    "fix": "`body.amp` invalid Liquid substitution format."
+  },
+  "10009": {
+    "http": 400,
+    "message": "`options.unsubscribe_url` invalid Liquid substitution format.",
+    "fix": "`options.unsubscribe_url` invalid Liquid substitution format."
+  }
+}
